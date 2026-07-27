@@ -1,0 +1,16 @@
+variable "rgs-vinav" {
+  type = map(object({
+    name     = string
+    location = string
+  }))
+}
+
+variable "aks" {
+  description = "AKS cluster configuration map"
+  type = map(object({
+    name                = string
+    location            = string
+    resource_group_name = string
+    dns_prefix          = string
+  }))
+}
