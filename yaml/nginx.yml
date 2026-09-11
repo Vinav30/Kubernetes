@@ -4,15 +4,15 @@ metadata:
   name: nginx-pod
 spec:
   containers:
-  - name: nginx
-    image: nginx:trixie-perl
-    ports:
-    - containerPort: 80
-  volumemounts:
-  - name: nginx-volume
-    mountpath: /usr/share/nginx/html
+    - name: nginx
+      image: nginx:trixie-perl
+      ports:
+        - containerPort: 80
+      volumeMounts:
+        - name: nginx-storage
+          mountPath: /usr/share/nginx/html
 
   volumes:
-  - name: nginx-volume
-    persistentvolumeclaim:
-      claimname: nginx-pvc
+    - name: nginx-storage
+      persistentVolumeClaim:
+        claimName: nginx-pvc

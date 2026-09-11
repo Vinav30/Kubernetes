@@ -1,4 +1,4 @@
-variable "rgs-vinav" {
+variable "rgs-axion" {
   type = map(object({
     name     = string
     location = string
@@ -12,5 +12,14 @@ variable "aks" {
     location            = string
     resource_group_name = string
     dns_prefix          = string
+  }))
+}
+variable "acr" {
+  type = map(object({
+    name                        = string
+    resource_group_name         = string
+    location                    = string
+    sku                         = string
+  
   }))
 }

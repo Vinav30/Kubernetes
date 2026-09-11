@@ -1,4 +1,4 @@
-variable "rgs-vinav" {
+variable "rgs-axion" {
   type = map(object({
     name     = string
     location = string

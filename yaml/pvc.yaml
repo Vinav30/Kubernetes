@@ -4,6 +4,8 @@ metadata:
   name: nginx-pvc
 spec:
   storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi

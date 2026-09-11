@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: vinav
+  labels:
+    app: myapp
+    key: value
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: pod-vinav
+  template:
+    metadata:
+      labels:
+        app: pod-vinav
+        version: v1
+        
+    spec:
+      containers:
+        - name: firefox
+          image: jlesage/firefox:v26.07.2
+
+

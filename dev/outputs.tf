@@ -1,6 +1,6 @@
 output "resource_group_names" {
   description = "The names of the created resource groups"
-  value       = { for k, v in var.rgs-vinav : k => v.name }
+  value       = { for k, v in var.rgs-axion : k => v.name }
 }
 
 output "aks_cluster_names" {
@@ -12,3 +12,7 @@ output "aks_cluster_names" {
 # output "aks_cluster_ids" {
 #   value = module.aks.aks_ids
 # }
+output "acr_names" {
+  description = "The names of the ACR instances"
+  value       = { for k, v in var.acr : k => v.name }
+}
