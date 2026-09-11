@@ -1,0 +1,13 @@
+trigger: none
+pool:Vinav
+
+stages:
+  - stage: terraform-download
+    
+    jobs:
+      - job: terraform-download
+
+        steps:
+        - task: TerraformInstaller@1
+          inputs:
+            terraformVersion: 'latest'
