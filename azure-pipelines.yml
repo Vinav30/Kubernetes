@@ -11,3 +11,20 @@ stages:
         - task: TerraformInstaller@1
           inputs:
             terraformVersion: 'latest'
+
+        - task: TerraformTask@5
+          inputs:
+            provider: 'azurerm'
+            command: 'init'
+            workingDirectory: '$(System.DefaultWorkingDirectory)dev'
+            backendServiceArm: 'vinav'
+            backendAzureRmResourceGroupName: 'vinav'
+            backendAzureRmStorageAccountName: 'vinavstg'
+            backendAzureRmContainerName: 'test'
+
+        - task: TerraformTask@5
+          inputs:
+            provider: 'azurerm'
+            command: 'apply'
+            workingDirectory: '$(System.DefaultWorkingDirectory)dev'
+            environmentServiceNameAzureRM: 'vinav'
