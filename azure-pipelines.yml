@@ -1,11 +1,11 @@
 trigger: none
-pool:Vinav
+pool: Vinav
 
 stages:
-  - stage: terraform-download
+  - stage: terraformdownload
     
     jobs:
-      - job: terraform-download
+      - job: terraformdownload
 
         steps:
         - task: TerraformInstaller@1
