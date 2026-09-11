@@ -17,10 +17,12 @@ stages:
             provider: 'azurerm'
             command: 'init'
             workingDirectory: '$(System.DefaultWorkingDirectory)dev'
+            backendAzureRmUseEntraIdForAuthentication: false
             backendServiceArm: 'Batch18'
             backendAzureRmResourceGroupName: 'vinav'
             backendAzureRmStorageAccountName: 'vinavstg'
             backendAzureRmContainerName: 'test'
+            backendAzureRmKey: 'terraform.tfstate'
 
         - task: TerraformTask@5
           inputs:
